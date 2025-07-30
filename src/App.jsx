@@ -9,6 +9,7 @@ import Profile from "./components/Profile";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import TvShows from "./components/TvShows";
 import ErrLoadPage from "./components/ErrLoadPage";
+import MovieDetails from "./components/MovieDetails";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
 
         <Route path="/TvShows" element={<TvShows/>}/>
         <Route path="/ErrLoadPage" element={<ErrLoadPage/>}/>
+        <Route path="/MovieDetails/:movieId" element={<MovieDetails/>}/>
       </Routes>
       <MyFooter />
     </BrowserRouter>
