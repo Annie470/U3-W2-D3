@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Alert, Spinner, Container, Row, Col, Image, ListGroup } from "react-bootstrap";
+import AddComment from "./AddComment";
 
 const MovieDetails = () => {
   const [readFilm, setReadFilm] = useState();
   const [comm, setComm] = useState([]);
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [forUp, setForUp]=useState(true)
   const params = useParams();
 
   const endpoint = "https://www.omdbapi.com/?apikey=";
@@ -59,7 +61,7 @@ const MovieDetails = () => {
   useEffect(() => {
     chiamataFilm(params.movieId);
     chiamataCommenti(params.movieId);
-  }, []);
+  }, [forUp]);
   return (
     <>
       {isError && (
@@ -89,9 +91,11 @@ const MovieDetails = () => {
                 {readFilm.Year} - {readFilm.Genre}
               </h6>
               <h5 className="text-white fw-normal">{readFilm.Plot}</h5>
+              <AddComment id={params.movieId} setForUp={setForUp}/>
              {comm.length > 0 && (
   <div className="mt-4">
     <h5 className="text-white">Recensioni</h5>
+     
     <ListGroup>
       {comm.map((commento) => (
         <ListGroup.Item
