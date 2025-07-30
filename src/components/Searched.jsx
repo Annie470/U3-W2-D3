@@ -35,7 +35,7 @@ const Searched = ()=> {
       });
   };
 
-  useEffect(()=>{getFilms()},[])
+  useEffect(()=>{getFilms()},[params])
 
     return (
        <>
