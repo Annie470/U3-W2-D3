@@ -16,7 +16,7 @@ const MyNav = () => {
       <Container fluid>
         <Navbar.Brand href="#">
           <img
-            src="src\assets\logo.png"
+            src="public\logo.png"
             alt="Netflix logo"
             style={{ width: '100px', height: '55px' }}
           />

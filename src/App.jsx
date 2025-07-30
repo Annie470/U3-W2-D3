@@ -10,13 +10,17 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import TvShows from "./components/TvShows";
 import ErrLoadPage from "./components/ErrLoadPage";
 import MovieDetails from "./components/MovieDetails";
+import SearchFilm from "./components/SearchFilm";
+import Searched from "./components/Searched";
 
 function App() {
   return (
     <BrowserRouter>
       <MyNav />
       <Hero />
+      <SearchFilm />
       <Routes>
+        <Route path="/Searched/:query" element={<Searched />} />
         <Route
           path="/"
           element={
